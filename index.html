@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>结算清单</title>
+    <script src="js.js"></script>
+    <link rel="stylesheet" href="qd.css">
+
+</head>
+<body>
+<table id="cartTable">
+    <thead>
+    <tr>
+        <th><label><input id="selectAll" class="check-all check" type="checkbox"/> 全选</label></th>
+        <th>序号</th>
+        <th>预览</th>
+        <th>商品名称</th>
+        <th>简介</th>
+        <!--<th>收货日期</th>-->
+        <th>价格</th>
+        <th>数量</th>
+        <th>小计</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>1</td>
+        <td class="goods"><img src="images/phone1.jpg" alt="" /><span>SFLS景观卡片</span></td>
+        <td class="sm">SFLS景观卡片</td>
+        <td>共4种,随机款式发货</td>
+        <td class="price">3.00￥/张</td>
+        <td class="count">
+            <span class="reduce">-</span>
+            <input class="count-input" type="text" value="1" />
+            <span class="add">+</span></td>
+        <td class="subtotal">3</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>2</td>
+        <td class="goods"><img src="images/phone1.jpg" alt="" /><span>校服熊中性笔</span></td>
+        <td class="sm">校服熊中性笔</td>
+        <td>校服熊图案为本班同学原创</td>
+        <td class="price">15.00￥/支</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">15</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>3</td>
+        <td class="goods"><img src="images/phone2.jpg" alt="" /><span>动漫徽章</span></td>
+        <td class="sm">动漫徽章</td>
+        <td>可以定制！请务必记得将图片在发订单邮件时一并发送或微信发送！徽章直径54mm</td>
+        <td class="price">10.00￥/个</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">10</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>4</td>
+        <td class="goods"><img src="images/phone2.jpg" alt="" /><span>校服熊帆布袋</span></td>
+        <td class="sm">校服熊帆布袋</td>
+        <td>校服熊图案为本班同学原创</td>
+        <td class="price">30.00/个</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">30</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>5</td>
+        <td class="goods"><img src="images/phone3.jpg" alt="" /><span>校徽马克杯</span></td>
+        <td class="sm">校徽马克杯</td>
+        <td>新校徽！</td>
+        <td class="price">35.00￥/个</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">35</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>6</td>
+        <td class="goods"><img src="images/phone3.jpg" alt="" /><span>校服熊封口贴</span></td>
+        <td class="sm">校服熊封口贴</td>
+        <td>不支持单个购买，如有不便实感抱歉</td>
+        <td class="price">8.00￥/10张</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">8</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>7</td>
+        <td class="goods"><img src="images/phone3.jpg" alt="" /><span>SFLS皮质封面笔记本</span></td>
+        <td class="sm">SFLS皮质封面笔记本</td>
+        <td>厚重、正式的笔记本</td>
+        <td class="price">20.00￥/本</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">20</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>8</td>
+        <td class="goods"><img src="images/phone3.jpg" alt="" /><span>动漫人物亚克力立牌</span></td>
+        <td class="sm">动漫人物亚克力立牌</td>
+        <td>可以定制！请务必记得将图片在发订单邮件时一并发送或微信发送！</td>
+        <td class="price">18.00￥/块</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">18</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
+        <td>9</td>
+        <td class="goods"><img src="images/phone3.jpg" alt="" /><span>明信片</span></td>
+        <td class="sm">明信片</td>
+        <td>轻盈如燕，记录下美丽的瞬间</td>
+        <td class="price">8.00￥/张</td>
+        <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
+        <td class="subtotal">8</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    <tr>
+        <td class="checkbox"></td>
+        <td>0</td>
+        <td class="goods"></td>
+        <td class="sm">说明</td>
+        <td>
+            可以定制的商品请务必记得将图片在发订单邮件时一并发送或微信发送！<br>
+            负责人微信: pzq12341234 (微信名称:Mathilde_看鑫_)<br>
+            商品一经发出不得退、换。如有质量问题请联系负责人。<br>
+            单笔消费超过50元可以免费升级包装(盒子用完即止),若未超过50元额外收取5元包装费<br>
+            明信片可以申请代写,手续费5元,若有需要请联系负责人。<br>
+            若不能校内自提收货，额外收取15元邮寄费。
+        </td>
+        <td class="price">0.00￥</td>
+        <td class="count"></td>
+        <td class="subtotal">0</td>
+        <td class="operation"><span class="delete"></span></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="foot" id="foot">
+    <div class="fr closing" onclick="showTotal()">结 算</div>
+    <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+    <div class="fr selected">已选商品
+        <span id="selectedTotal">0</span>件
+
+    </div>
+</div>
+</body>
+</html>
