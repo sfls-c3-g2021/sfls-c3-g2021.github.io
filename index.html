@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>结算清单</title>
     <script src="js.js"></script>
+    <script src="Base64encode.js"></script>
     <link rel="stylesheet" href="qd.css">
 
 </head>
@@ -13,6 +14,7 @@
     <tr>
         <th><label><input id="selectAll" class="check-all check" type="checkbox"/> 全选</label></th>
         <th>序号</th>
+        <th>商品代码</th>
         <th>预览</th>
         <th>商品名称</th>
         <th>简介</th>
@@ -27,9 +29,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>1</td>
+        <td class="code">SK</td>
         <td class="goods"><img src="images/phone1.jpg" alt="" /><span>SFLS景观卡片</span></td>
         <td class="sm">SFLS景观卡片</td>
-        <td>共4种,随机款式发货</td>
+        <td class="info">共4种,随机款式发货。</td>
         <td class="price">3.00￥/张</td>
         <td class="count">
             <span class="reduce">-</span>
@@ -41,9 +44,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>2</td>
+        <td class="code">ZB</td>
         <td class="goods"><img src="images/phone1.jpg" alt="" /><span>校服熊中性笔</span></td>
         <td class="sm">校服熊中性笔</td>
-        <td>校服熊图案为本班同学原创</td>
+        <td class="info">校服熊图案为本班同学原创。</td>
         <td class="price">15.00￥/支</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">15</td>
@@ -52,9 +56,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>3</td>
+        <td class="code">HZ</td>
         <td class="goods"><img src="images/phone2.jpg" alt="" /><span>动漫徽章</span></td>
         <td class="sm">动漫徽章</td>
-        <td>可以定制！请务必记得将图片在发订单邮件时一并发送或微信发送！徽章直径54mm</td>
+        <td class="info">可以定制！请务必记得将图片在微信发送！徽章直径54mm。</td>
         <td class="price">10.00￥/个</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">10</td>
@@ -63,10 +68,11 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>4</td>
+        <td class="code">FB</td>
         <td class="goods"><img src="images/phone2.jpg" alt="" /><span>校服熊帆布袋</span></td>
         <td class="sm">校服熊帆布袋</td>
-        <td>校服熊图案为本班同学原创</td>
-        <td class="price">30.00/个</td>
+        <td class="info">校服熊图案为本班同学原创。</td>
+        <td class="price">30.00￥/个</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">30</td>
         <td class="operation"><span class="delete"></span></td>
@@ -74,9 +80,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>5</td>
+        <td class="code">MG</td>
         <td class="goods"><img src="images/phone3.jpg" alt="" /><span>校徽马克杯</span></td>
         <td class="sm">校徽马克杯</td>
-        <td>新校徽！</td>
+        <td class="info">新校徽！</td>
         <td class="price">35.00￥/个</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">35</td>
@@ -85,9 +92,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>6</td>
+        <td class="code">FT</td>
         <td class="goods"><img src="images/phone3.jpg" alt="" /><span>校服熊封口贴</span></td>
         <td class="sm">校服熊封口贴</td>
-        <td>不支持单个购买，如有不便实感抱歉</td>
+        <td class="info">不支持单个购买，如有不便实感抱歉。</td>
         <td class="price">8.00￥/10张</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">8</td>
@@ -96,9 +104,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>7</td>
+        <td class="code">PB</td>
         <td class="goods"><img src="images/phone3.jpg" alt="" /><span>SFLS皮质封面笔记本</span></td>
         <td class="sm">SFLS皮质封面笔记本</td>
-        <td>厚重、正式的笔记本</td>
+        <td class="info">厚重、正式的笔记本。</td>
         <td class="price">20.00￥/本</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">20</td>
@@ -107,9 +116,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>8</td>
+        <td class="code">YP</td>
         <td class="goods"><img src="images/phone3.jpg" alt="" /><span>动漫人物亚克力立牌</span></td>
         <td class="sm">动漫人物亚克力立牌</td>
-        <td>可以定制！请务必记得将图片在发订单邮件时一并发送或微信发送！</td>
+        <td class="info">可以定制！请务必记得将图片在微信发送！</td>
         <td class="price">18.00￥/块</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">18</td>
@@ -118,9 +128,10 @@
     <tr>
         <td class="checkbox"><input id="item" class="check-one" type="checkbox" onclick="getStart()"/></td>
         <td>9</td>
+        <td class="code">MP</td>
         <td class="goods"><img src="images/phone3.jpg" alt="" /><span>明信片</span></td>
         <td class="sm">明信片</td>
-        <td>轻盈如燕，记录下美丽的瞬间</td>
+        <td class="info">轻盈如燕，记录下美丽的瞬间。</td>
         <td class="price">8.00￥/张</td>
         <td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1" /><span class="add">+</span></td>
         <td class="subtotal">8</td>
@@ -129,13 +140,14 @@
     <tr>
         <td class="checkbox"></td>
         <td>0</td>
+        <td class="code"></td>
         <td class="goods"></td>
         <td class="sm">说明</td>
-        <td>
+        <td class="info">
             可以定制的商品请务必记得将图片在发订单邮件时一并发送或微信发送！<br>
             负责人微信: pzq12341234 (微信名称:Mathilde_看鑫_)<br>
             商品一经发出不得退、换。如有质量问题请联系负责人。<br>
-            单笔消费超过50元可以免费升级包装(盒子用完即止),若未超过50元额外收取5元包装费<br>
+            单笔消费超过50元可以免费升级包装(盒子用完即止),<br>若未超过50元升级包装额外收取5元包装费。<br>
             明信片可以申请代写,手续费5元,若有需要请联系负责人。<br>
             若不能校内自提收货，额外收取15元邮寄费。
         </td>
@@ -147,12 +159,21 @@
     </tbody>
 </table>
 
+<div class="basic_info" id="basic_info">
+    <br>
+    <input id="buyerName" placeholder="请输入姓名" />
+    <br>
+    <input id="number" placeholder="请输入学号(没有填-1)" />
+    <br>
+    <input id="contact" placeholder="请输入联系方式" />
+    <button onclick="alert('请加管理员微信 pzq12341234 付款,并在好友申请中注明姓名;也烦请将稍后显示的取货码妥善保存,这将是提货的唯一凭证!');alert(showTotal())" style="margin-left: 75%;">显示提货码</button>
+</div>
+
 <div class="foot" id="foot">
-    <div class="fr closing" onclick="showTotal()">结 算</div>
+    <div class="fr closing" onclick="alert('请加管理员微信 pzq12341234 付款,并在好友申请中注明姓名;也烦请将稍后显示的取货码妥善保存,这将是提货的唯一凭证!');alert(showTotal())">结 算</div>
     <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
     <div class="fr selected">已选商品
         <span id="selectedTotal">0</span>件
-
     </div>
 </div>
 </body>

@@ -1,4 +1,5 @@
 window.onload = function() {
+    alert('请先勾选商品再更改数量!')
     var oSelect = document.getElementById("selectAll");
     var aItems = document.getElementsByClassName("check-one");
     var oSum = document.getElementById("priceTotal");
@@ -121,18 +122,26 @@ function getReduce(n) {
 }
 
 function showTotal() {
+    if(document.getElementById('buyerName').value == '' && document.getElementById('number').value == '' && document.getElementById('contact').value == '') {
+        alert('请先填写必要的个人信息!');
+        return;
+    }
     var price = document.getElementById("priceTotal").innerText;
-    alert('请稍等并在弹出的邮件窗口中填写基本信息!');
-    var goods = '';
+    var str = '';
+    str = '姓名:' + document.getElementById('buyerName').value + ' 学号:' + document.getElementById('number').value + ' 联系方式:' + document.getElementById('contact').value + ' ';
     var aCountInput = document.getElementsByClassName("count-input");
     var aItems = document.getElementsByClassName("check-one");
-    var aNames = document.getElementsByClassName("sm");
+    var aCodes = document.getElementsByClassName("code");
     for (var j = 0; j < aItems.length; j++) {
         if (aItems[j].checked) {
-            goods += aNames[j].innerText + '*' + aCountInput[j].value + '%0d%0a';
+            str += aCodes[j].innerText + 'x' + aCountInput[j].value + ' ';
         }
     }
-    window.open('mailto: sfls-c3-g2021@outlook.com?subject=义卖订单&body=班级:%0d%0a姓名:%0d%0a学号:%0d%0a备注:%0d%0a%0d%0a%0d%0a%0d%0a购买内容(以下请勿更改):%0d%0a' + goods + '总计:' + price, '_blank');
+    str = str + ' 总计:' + price + '元';
+    base64 = b64EncodeUnicode(str);
+    console.log(base64);
+    return base64;
+    //window.open('mailto: sfls-c3-g2021@outlook.com?subject=义卖订单&body=班级:%0d%0a姓名:%0d%0a学号:%0d%0a备注:%0d%0a%0d%0a%0d%0a%0d%0a购买内容(以下请勿更改):%0d%0a' + goods + '总计:' + price, '_blank');
 }
 
 function chooseIt(i) {

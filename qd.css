@@ -38,11 +38,14 @@ td {
 tbody tr:hover {
     background: RGB(238,246,255);
 }
+.info {
+    width: 45%;
+}
 .checkbox {
-    width: 60px;
+    width: 5%;
 }
 .goods {
-    width: 80px;
+    width: 10%;
     /* background-color: red; */
     text-align: center;
 }
@@ -58,7 +61,7 @@ tbody tr:hover {
 }
 .goods img{
     margin-left: 20px;
-    width: 130px;
+    width: 120px;
     /* border: #A7CBFF 2px solid; */
 
     display: inline-block;
@@ -67,7 +70,7 @@ tbody tr:hover {
 }
 .goods span {
     display: block;
-    width: 130px;
+    width: 120px;
     margin-top: 20px;
     text-align: center;
     margin-left: 20px;
@@ -112,7 +115,7 @@ tbody tr:hover {
     z-index: 2;
 }
 .subtotal {
-    width: 80px;
+    width: 50px;
     color: red;
     font-weight: bold;
 }
@@ -253,4 +256,9 @@ img {
 }
 #selectedViewList div:hover span {
     display: block;
+}
+.basic_info input {
+    height: 50px;
+    width: 20%;
+    margin-left: 75%;
 }
